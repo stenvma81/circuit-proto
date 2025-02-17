@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct HoboCircuitApp: App {
-
+    let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, persistenceController.context)
         }
     }
 }
+   
